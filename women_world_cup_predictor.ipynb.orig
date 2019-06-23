@@ -57,14 +57,13 @@
    "cell_type": "code",
    "execution_count": 1,
    "metadata": {
-    "scrolled": true
+    "scrolled": false
    },
    "outputs": [],
    "source": [
     "import numpy as np\n",
     "import pandas as pd\n",
     "import matplotlib.pyplot as plt\n",
-    "\n",
     "import seaborn as sns\n",
     "\n",
     "from IPython.core.display import display, HTML\n",
@@ -90,6 +89,8 @@
   {
    "cell_type": "code",
    "execution_count": 2,
+<<<<<<< HEAD
+=======
    "metadata": {
     "scrolled": true
    },
@@ -110,6 +111,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
+>>>>>>> f36bffa67201eb45511bfa7d53ba150caced04f0
    "metadata": {
     "scrolled": true
    },
@@ -134,17 +136,21 @@
     }
    ],
    "source": [
-    "scores_raw = pd.read_csv('womens_world_cup_data.csv')\n",
-    "ranking = pd.read_csv('womens_world_cup_rankings.csv')\n",
-    "\n",
     "display(scores_raw.shape)\n",
     "display(ranking.shape)"
    ]
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 3,
+   "metadata": {
+    "scrolled": true
+   },
+=======
    "execution_count": 4,
    "metadata": {},
+>>>>>>> f36bffa67201eb45511bfa7d53ba150caced04f0
    "outputs": [
     {
      "data": {
@@ -218,7 +224,11 @@
        "2  philippines        china       0       0        0        3  2018"
       ]
      },
+<<<<<<< HEAD
+     "execution_count": 3,
+=======
      "execution_count": 4,
+>>>>>>> f36bffa67201eb45511bfa7d53ba150caced04f0
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -229,7 +239,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 4,
+=======
    "execution_count": 5,
+>>>>>>> f36bffa67201eb45511bfa7d53ba150caced04f0
    "metadata": {
     "scrolled": true
    },
@@ -290,7 +304,11 @@
        "2     3        England    2049"
       ]
      },
+<<<<<<< HEAD
+     "execution_count": 4,
+=======
      "execution_count": 5,
+>>>>>>> f36bffa67201eb45511bfa7d53ba150caced04f0
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -300,8 +318,128 @@
    ]
   },
   {
+<<<<<<< HEAD
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "RangeIndex: 354 entries, 0 to 353\n",
+      "Data columns (total 5 columns):\n",
+      "Team_i     354 non-null object\n",
+      "Team_j     354 non-null object\n",
+      "score_i    354 non-null int64\n",
+      "score_j    354 non-null int64\n",
+      "year       354 non-null int64\n",
+      "dtypes: int64(3), object(2)\n",
+      "memory usage: 13.9+ KB\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "None"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Team_i</th>\n",
+       "      <th>Team_j</th>\n",
+       "      <th>score_i</th>\n",
+       "      <th>score_j</th>\n",
+       "      <th>year</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>china</td>\n",
+       "      <td>thailand</td>\n",
+       "      <td>4</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2018</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>jordan</td>\n",
+       "      <td>philippines</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2018</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>philippines</td>\n",
+       "      <td>china</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>2018</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>thailand</td>\n",
+       "      <td>jordan</td>\n",
+       "      <td>6</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2018</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>jordan</td>\n",
+       "      <td>china</td>\n",
+       "      <td>1</td>\n",
+       "      <td>8</td>\n",
+       "      <td>2018</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "        Team_i       Team_j  score_i  score_j  year\n",
+       "0        china     thailand        4        0  2018\n",
+       "1       jordan  philippines        1        2  2018\n",
+       "2  philippines        china        0        3  2018\n",
+       "3     thailand       jordan        6        1  2018\n",
+       "4       jordan        china        1        8  2018"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+=======
    "cell_type": "markdown",
    "metadata": {},
+>>>>>>> f36bffa67201eb45511bfa7d53ba150caced04f0
    "source": [
     "The countries'names in `ranking` data have upper case letters, we are going to make it consistent with the `scores` data by changing them to lower case."
    ]
@@ -383,7 +521,111 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+<<<<<<< HEAD
+    "### Guarantee that team I and team J respect lexical order"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Team_i</th>\n",
+       "      <th>Team_j</th>\n",
+       "      <th>score_i</th>\n",
+       "      <th>score_j</th>\n",
+       "      <th>year</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>china</td>\n",
+       "      <td>thailand</td>\n",
+       "      <td>4</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2018</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>jordan</td>\n",
+       "      <td>philippines</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2018</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>china</td>\n",
+       "      <td>philippines</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2018</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>jordan</td>\n",
+       "      <td>thailand</td>\n",
+       "      <td>1</td>\n",
+       "      <td>6</td>\n",
+       "      <td>2018</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>china</td>\n",
+       "      <td>jordan</td>\n",
+       "      <td>8</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2018</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   Team_i       Team_j  score_i  score_j  year\n",
+       "0   china     thailand        4        0  2018\n",
+       "1  jordan  philippines        1        2  2018\n",
+       "2   china  philippines        3        0  2018\n",
+       "3  jordan     thailand        1        6  2018\n",
+       "4   china       jordan        8        1  2018"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "scores.loc[scores['Team_j'] < scores['Team_i'], ['Team_i', 'score_i', 'Team_j', 'score_j']] = \\\n",
+    "    scores.loc[scores['Team_j'] < scores['Team_i'], ['Team_j', 'score_j', 'Team_i', 'score_i']].values\n",
+    "        \n",
+=======
     "#### Merging the DataFrames\n",
+>>>>>>> f36bffa67201eb45511bfa7d53ba150caced04f0
     "\n",
     "In order to make easy to analyse the data, we are going to merge the DFs."
    ]
@@ -520,7 +762,10 @@
        "4      1962      34      1658  "
       ]
      },
-     "execution_count": 11,
+<<<<<<< HEAD
+     "execution_count": 8,
+=======
+>>>>>>> f36bffa67201eb45511bfa7d53ba150caced04f0
      "metadata": {},
      "output_type": "display_data"
     },
@@ -586,9 +831,13 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 9,
+=======
    "execution_count": 11,
+>>>>>>> f36bffa67201eb45511bfa7d53ba150caced04f0
    "metadata": {
-    "scrolled": true
+    "scrolled": false
    },
    "outputs": [
     {
@@ -699,7 +948,7 @@
        "286      46      1499  "
       ]
      },
-     "execution_count": 13,
+     "execution_count": 10,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -925,7 +1174,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 11,
    "metadata": {
     "scrolled": true
    },
@@ -947,7 +1196,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 12,
    "metadata": {
     "scrolled": true
    },
@@ -1027,7 +1276,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 13,
    "metadata": {
     "scrolled": true
    },
@@ -1158,7 +1407,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 14,
    "metadata": {
     "scrolled": true
    },
@@ -1340,7 +1589,6 @@
     "\n",
     "def train_model_k_fold(model, score, train_data=X, target_data=y_raw):\n",
     "    scores = []\n",
-    "    confusion_matrixes = []\n",
     "    \n",
     "    for train, test in k_fold_indexes:       \n",
     "        X_train, X_test, y_train, y_test = \\\n",
@@ -1496,7 +1744,6 @@
     "models.append((\"SVC kernel=sigmoid\", SVC(kernel='sigmoid', gamma='auto', random_state=4)))\n",
     "models.append((\"Random Forest\", RandomForestClassifier(n_estimators=10, random_state=4)))\n",
     "models.append((\"Gradient Boosting\", GradientBoostingClassifier(random_state=4)))\n",
-    "\n",
     "\n",
     "for name, model in models:\n",
     "    print(f'{name}: {train_model_k_fold(model, accuracy_score)}')\n",
@@ -1882,7 +2129,25 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.7.1"
+   "version": "3.7.3"
+  },
+  "latex_envs": {
+   "LaTeX_envs_menu_present": true,
+   "autoclose": false,
+   "autocomplete": true,
+   "bibliofile": "biblio.bib",
+   "cite_by": "apalike",
+   "current_citInitial": 1,
+   "eqLabelWithNumbers": true,
+   "eqNumInitial": 1,
+   "hotkeys": {
+    "equation": "Ctrl-E",
+    "itemize": "Ctrl-I"
+   },
+   "labels_anchors": false,
+   "latex_user_defs": false,
+   "report_style_numbering": false,
+   "user_envs_cfg": false
   }
  },
  "nbformat": 4,
