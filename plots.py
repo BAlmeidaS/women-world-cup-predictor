@@ -48,14 +48,14 @@ def print_confusion_matrixes(cm_list, labels, figsize = (10,7), fontsize=14):
         heatmap.xaxis.set_ticklabels(heatmap.xaxis.get_ticklabels(), rotation=0, fontsize=20)
         heatmap.xaxis.set_ticks_position('top')
 
-        ax[i].set_ylabel('Predicted Class', fontsize=20)
-        ax[i].set_xlabel('Actual Class', fontsize=20)
+        ax[i].set_ylabel('Actual Class', fontsize=20)
+        ax[i].set_xlabel('Predicted Class', fontsize=20)
         ax[i].set_title(f'Confusion Matrix - k = {i}', fontsize=24, pad=10)
 
         ax[i].xaxis.set_label_position('top')
         
 
-def plot_learning_curve(estimator, title, X, y, cv=5,
+def plot_learning_curve(estimator, title, X, y, scoring, cv=5,
                         n_jobs=4, train_sizes=np.linspace(.1, 1.0, 5)):
     plt.figure()
     plt.title(title, fontsize=18)
@@ -64,7 +64,7 @@ def plot_learning_curve(estimator, title, X, y, cv=5,
     plt.ylabel("Score")
     
     train_sizes, train_scores, test_scores = learning_curve(
-        estimator, X, y, cv=cv, n_jobs=n_jobs, train_sizes=train_sizes)
+        estimator, X, y, cv=cv, n_jobs=n_jobs, train_sizes=train_sizes, scoring=scoring)
     
     train_scores_mean = np.mean(train_scores, axis=1)
     train_scores_std = np.std(train_scores, axis=1)
