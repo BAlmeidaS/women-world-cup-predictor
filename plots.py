@@ -58,7 +58,7 @@ def print_confusion_matrixes(cm_list, labels, figsize = (10,7), fontsize=14):
 def plot_learning_curve(estimator, title, X, y, cv=5,
                         n_jobs=4, train_sizes=np.linspace(.1, 1.0, 5)):
     plt.figure()
-    plt.title(title)
+    plt.title(title, fontsize=18)
 
     plt.xlabel("Training examples")
     plt.ylabel("Score")
