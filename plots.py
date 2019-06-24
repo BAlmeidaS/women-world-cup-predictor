@@ -3,10 +3,14 @@ import pandas as pd
 import seaborn as sns
 import numpy as np
 
+from bokeh.io import show
+from bokeh.plotting import figure
+
 from sklearn.model_selection import learning_curve
 # from sklearn.model_selection import ShuffleSplit
 
-def print_confusion_matrix(confusion_matrix, labels, figsize = (10,7), fontsize=14):
+
+def print_confusion_matrix(confusion_matrix, labels, figsize=(10, 7), fontsize=14):
     df_cm = pd.DataFrame(confusion_matrix, index=labels, columns=labels)
 
     fig, ax = plt.subplots(1, 1, constrained_layout=True)
@@ -26,14 +30,14 @@ def print_confusion_matrix(confusion_matrix, labels, figsize = (10,7), fontsize=
 
     ax.xaxis.set_label_position('top')
 
-    plt.show();
-    
-    
-def print_confusion_matrixes(cm_list, labels, figsize = (10,7), fontsize=14):
+    plt.show()
+
+
+def print_confusion_matrixes(cm_list, labels, figsize=(10, 7), fontsize=14):
     if(len(cm_list)) == 1:
-        print_confusion_matrix(cm_list[1], labels, figsize = (10,7), fontsize=14)
+        print_confusion_matrix(cm_list[1], labels, figsize=(10, 7), fontsize=14)
         return
-    
+
     fig, ax = plt.subplots(1, len(cm_list), constrained_layout=True, figsize=(30, 6))
 
     for i, cm in enumerate(cm_list):
@@ -53,7 +57,7 @@ def print_confusion_matrixes(cm_list, labels, figsize = (10,7), fontsize=14):
         ax[i].set_title(f'Confusion Matrix - k = {i}', fontsize=24, pad=10)
 
         ax[i].xaxis.set_label_position('top')
-        
+
 
 def plot_learning_curve(estimator, title, X, y, scoring, cv=5,
                         n_jobs=4, train_sizes=np.linspace(.1, 1.0, 5)):
@@ -62,10 +66,10 @@ def plot_learning_curve(estimator, title, X, y, scoring, cv=5,
 
     plt.xlabel("Training examples")
     plt.ylabel("Score")
-    
+
     train_sizes, train_scores, test_scores = learning_curve(
         estimator, X, y, cv=cv, n_jobs=n_jobs, train_sizes=train_sizes, scoring=scoring)
-    
+
     train_scores_mean = np.mean(train_scores, axis=1)
     train_scores_std = np.std(train_scores, axis=1)
     test_scores_mean = np.mean(test_scores, axis=1)
@@ -84,3 +88,29 @@ def plot_learning_curve(estimator, title, X, y, scoring, cv=5,
 
     plt.legend(loc="best")
     return plt
+
+
+def print_bar_chart(xlabels, counts, title):
+    result = xlabels
+    counts = counts
+
+    p = figure(x_range=result, plot_height=250, title=title,
+               toolbar_location=None, tools="")
+
+    p.vbar(x=result, top=counts, width=0.9, color='#6baed6')
+
+    p.xgrid.grid_line_color = None
+    p.y_range.start = 0
+    if (len(xlabels) > 6):
+        p.xaxis.major_label_orientation = 0.75
+    show(p)
+
+
+def plot_scatter(df_x, df_y, title):
+
+    plt.scatter(df_x, df_y, alpha=0.5, color='#016dac')
+    plt.xlabel(df_x.columns[0], fontsize=14)
+    plt.ylabel(df_y.columns[0], fontsize=14)
+    plt.title(title, fontsize=18)
+    plt.tick_params(axis='both', labelsize=12)
+    plt.show()
